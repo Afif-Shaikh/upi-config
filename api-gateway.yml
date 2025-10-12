@@ -1,0 +1,11 @@
+server:
+  port: 9999
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: user-service-route
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/api/users/**
